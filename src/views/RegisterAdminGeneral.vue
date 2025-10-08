@@ -70,9 +70,11 @@ const form = ref({
 
 const provinces = ref([]);
 
+const API_URL = import.meta.env.VITE_API_URL; // <-- URL du backend Render
+
 const handleRegister = async () => {
   try {
-    await axios.post('/api/administrateurs-generaux', form.value);
+    await axios.post(`${API_URL}/administrateurs-generaux`, form.value);
     alert('Compte créé avec succès ! Vous pouvez maintenant vous connecter.');
     window.location.href = '/';
   } catch (error) {
@@ -83,7 +85,7 @@ const handleRegister = async () => {
 
 onMounted(async () => {
   try {
-    const res = await axios.get('http://localhost:4000/api/provinces');
+    const res = await axios.get(`${API_URL}/provinces`);
     console.log('Provinces API response:', res.data);
     provinces.value = res.data;
   } catch (error) {

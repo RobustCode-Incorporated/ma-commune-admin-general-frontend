@@ -103,7 +103,7 @@ export default {
       this.loading = true;
       try {
         const token = localStorage.getItem('token');
-        const res = await axios.get('http://localhost:4000/api/administrateurs', {
+        const res = await axios.get('https://ma-commune-backend.onrender.com/api/administrateurs', {
           headers: { Authorization: `Bearer ${token}` },
         });
         this.administrateurs = res.data;
@@ -116,7 +116,7 @@ export default {
     async fetchCommunes() {
       try {
         const token = localStorage.getItem('token');
-        const res = await axios.get('http://localhost:4000/api/communes/province/1', {
+        const res = await axios.get('https://ma-commune-backend.onrender.com/api/communes/province/1', {
           headers: { Authorization: `Bearer ${token}` },
         });
         this.communes = res.data; 
@@ -127,7 +127,7 @@ export default {
     async handleAddAdmin() {
       try {
         const token = localStorage.getItem('token');
-        await axios.post('http://localhost:4000/api/administrateurs', this.form, {
+        await axios.post('https://ma-commune-backend.onrender.com/api/administrateurs', this.form, {
           headers: { Authorization: `Bearer ${token}` },
         });
         alert('Bourgmestre ajouté avec succès !');

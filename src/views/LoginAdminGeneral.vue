@@ -41,7 +41,8 @@ const credentials = ref({
 
 const handleLogin = async () => {
   try {
-    const res = await axios.post('/api/administrateurs-generaux/login-admin-general', credentials.value);
+    // Modification automatique pour pointer vers le backend Render
+    const res = await axios.post('https://ma-commune-backend.onrender.com/api/administrateurs-generaux/login-admin-general', credentials.value);
     localStorage.setItem('token', res.data.token);
     router.push('/admin-general/dashboard');
   } catch (err) {

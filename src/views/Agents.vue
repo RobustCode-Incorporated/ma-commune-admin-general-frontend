@@ -31,7 +31,7 @@
     async mounted() {
       try {
         const token = localStorage.getItem('token');
-        const res = await axios.get('http://localhost:4000/api/agents', {
+        const res = await axios.get('https://ma-commune-backend.onrender.com/api/agents', {
           headers: { Authorization: `Bearer ${token}` },
         });
         this.agents = res.data;

@@ -131,7 +131,7 @@ export default {
 
         // Statistiques globales
         const resGlobal = await axios.get(
-          "http://localhost:4000/api/dashboard/admin-general",
+          "https://ma-commune-backend.onrender.com/api/dashboard/admin-general",
           { headers: { Authorization: `Bearer ${token}` } }
         );
 
@@ -142,7 +142,7 @@ export default {
 
         // Statistiques population
         const resCitoyens = await axios.get(
-          "http://localhost:4000/api/dashboard/population",
+          "https://ma-commune-backend.onrender.com/api/dashboard/population",
           { headers: { Authorization: `Bearer ${token}` } }
         );
 

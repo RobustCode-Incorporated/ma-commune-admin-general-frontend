@@ -91,7 +91,7 @@ export default {
           this.loading = false;
           return;
         }
-        const url = `http://localhost:4000/api/communes/province/${payload.provinceId}`;
+        const url = `https://ma-commune-backend.onrender.com/api/communes/province/${payload.provinceId}`;
         const res = await axios.get(url, {
           headers: { Authorization: `Bearer ${token}` }
         });
@@ -122,7 +122,7 @@ export default {
       try {
         const token = localStorage.getItem('token');
         await axios.put(
-          `http://localhost:4000/api/communes/${commune.id}/assign-admin`,
+          `https://ma-commune-backend.onrender.com/api/communes/${commune.id}/assign-admin`,
           { adminId: null },
           { headers: { Authorization: `Bearer ${token}` } }
         );
